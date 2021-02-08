@@ -4,13 +4,12 @@ Learn-Machine-Learning
 
 关于机器学习的书比较多，有的侧重数学、有的侧重代码实现、有的附有案例，选了其中优秀的书同时参考学习，在此处记录，大家共同学习。
 
-不奢望做一个大而全的整合，不论是代码水平还是数学功底都不支持；希望能够从案例到代码实现再到数学逻辑，实现穿透式理解。
+不论是代码水平还是数学功底都不支持做一个大而全的整合；希望能够从案例到代码实现再到数学逻辑，实现穿透式理解。
 
 暂不涉及深度学习、NLP等，待机器学习基础完成后再进行下一步。
 
 计划以《机器学习实战》(Peter Harrington)为主线，参考《统计学习方法（第二版）》(李航)、《机器学习》(周志华)和《数据挖掘导论》，用Python实现机器学习常用算法。
 
----
 ## 计划目录：
 1. KNN（K-近邻）
 2. Decision Tree（决策树）
@@ -19,8 +18,7 @@ Learn-Machine-Learning
 5. SVM（支持向量机）
 6. AdaBoost
 
----
-GitHub参考：
+*GitHub参考：*
 
 * 《机器学习实战》JackCui学习笔记 [Jack-Cherish/Machine-Learning](https://github.com/Jack-Cherish/Machine-Learning)
 * 斯坦福大学2014（吴恩达）机器学习教程中文笔记 [fengdu78/Coursera-ML-AndrewNg-Notes](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
