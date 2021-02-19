@@ -53,5 +53,15 @@
         "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
-    "python.venvPath": "D:\\project\\Learn-Machine-Learning\\venv"
+    "python.venvPath": "D:\\project\\Learn-Machine-Learning\\venv",
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Args": [
+        "--max-line-length=248"
+    ],
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.defaultLanguage": "python",
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.runInTerminal": true
 }
