@@ -63,7 +63,7 @@ def classifyTest(dataMat, labelsMat, hoRatio: float = 0.10):
     for i in range(testRowNum):
         # print(i)
         classResult = classify0(
-            normDataSet[i : i + 1],
+            normDataSet[i: i + 1],
             testDataSet,
             testLabels,
             4,
