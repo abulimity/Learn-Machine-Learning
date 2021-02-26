@@ -133,4 +133,4 @@ dmypy.json
 .vscode/settings.json
 
 # data txt
-.data/
+data/
