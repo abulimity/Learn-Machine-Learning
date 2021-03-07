@@ -104,7 +104,7 @@ def maxInfoGain(dataSet, labelSet):
     return bestFeature
 
 
-def updateTree(dataSet, sigma):
+def createTree(dataSet, sigma):
     labelDict = dataSet["label"].value_counts().to_dict()
     featureNum = len(dataSet.columns) - 1
     tree = {}
@@ -112,18 +112,24 @@ def updateTree(dataSet, sigma):
         tree = {"label": list(labelDict.keys())[0]}
         return list(labelDict.keys())[0]
     elif featureNum == 0:
-        tree["label"] = sorted(labelDict.items(), key=lambda x: x[1], reverse=True)[0][0]
+        tree["label"] = sorted(labelDict.items(), key=lambda x: x[1], reverse=True)[0][
+            0
+        ]
         return sorted(labelDict.items(), key=lambda x: x[1], reverse=True)[0][0]
     bestFeature = maxInfoGain(dataSet.drop("label", axis=1), dataSet.label)
     if bestFeature["infoGain"] < sigma:
-        tree["label"] = sorted(labelDict.items(), key=lambda x: x[1], reverse=True)[0][0]
+        tree["label"] = sorted(labelDict.items(), key=lambda x: x[1], reverse=True)[0][
+            0
+        ]
         return sorted(labelDict.items(), key=lambda x: x[1], reverse=True)[0][0]
     else:
         bestFeatName = bestFeature["name"]
         Tree = {bestFeatName: {}}
         for val in list(dataSet[bestFeatName].value_counts().index):
-            subDataSet = dataSet[dataSet[bestFeatName] == val].drop(bestFeatName, axis=1)
-            Tree[bestFeatName][val] = updateTree(subDataSet, sigma)
+            subDataSet = dataSet[dataSet[bestFeatName] == val].drop(
+                bestFeatName, axis=1
+            )
+            Tree[bestFeatName][val] = createTree(subDataSet, sigma)
     return Tree
 
 
@@ -132,5 +138,5 @@ if __name__ == "__main__":
     dataSet["label"] = labelSet
     sigma = 0.0
     print(dataSet)
-    Tree = updateTree(dataSet, sigma)
+    Tree = createTree(dataSet, sigma)
     print(Tree)
