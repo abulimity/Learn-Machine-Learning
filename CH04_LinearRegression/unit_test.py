@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 
 class TestLR(unittest.TestCase):
-    def testA(self):
+    def test(self):
         dataSet = pd.read_csv(r'data\CH04_LinearRegression\ex0.txt', sep='\\t', engine='python', header=None, names=['x0', 'x1', 'y'])
         X_train, X_test, y_train, y_test = train_test_split(dataSet.loc[:, ['x0', 'x1']], dataSet['y'], train_size=0.8)
         cif = LR()
